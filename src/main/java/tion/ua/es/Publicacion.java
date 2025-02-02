@@ -1,7 +1,5 @@
 package tion.ua.es;
 
-import org.json.JSONObject;
-
 public abstract class Publicacion {
 
 	protected String titulo;
@@ -30,7 +28,5 @@ public abstract class Publicacion {
 	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	
-	public abstract JSONObject getJSON();
-	
+
 }

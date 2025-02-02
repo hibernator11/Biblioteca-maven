@@ -1,7 +1,5 @@
 package tion.ua.es;
 
-import org.json.JSONObject;
-
 public class Libro extends Publicacion{
 	
 	private String isbn;
@@ -29,13 +27,4 @@ public class Libro extends Publicacion{
 		this.isbn = isbn;
 	}
 
-	@Override
-	public JSONObject getJSON() {
-		JSONObject json = new JSONObject();
-		json.put("isbn", this.isbn);
-		json.put("lugarPublicacion", this.lugarPublicacion);
-		json.put("titulo", this.titulo);
-		json.put("autor", this.autor);
-		return json;
-	}
 }

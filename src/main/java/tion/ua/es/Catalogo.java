@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.json.JSONArray;
+import com.google.gson.Gson;
 
 public class Catalogo {
 
@@ -38,17 +38,7 @@ public class Catalogo {
 			System.out.println("Publicacion tipo:" + p.getClass() + " titulo:" + p.getTitulo() + " autor:" + p.getAutor());
 		}
 	}
-	
-	public void creaJSON() {
-		JSONArray array = new JSONArray();
-		
-		for(Publicacion p: catalogo) {
-			array.put(p.getJSON());
-		}
-		
-		System.out.println(array.toString());
-	}
-	
+
 	public static void main(String[] a) {
 		
 		Catalogo catalogo = new Catalogo();
@@ -68,10 +58,9 @@ public class Catalogo {
 		}
 		
 		catalogo.mostrar();
-		catalogo.creaJSON();
+
+		Gson gson = new Gson();
+		String jsonString = gson.toJson(catalogo.getCatalogo());
+		System.out.println(jsonString);
 	}
-
-
-	
-	
 }
